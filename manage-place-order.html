@@ -1,0 +1,232 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Dashboard Template · Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/css/all.css">
+
+    <style>
+
+        .add-button{
+            margin-top: 27px;
+        }
+
+        .total-color{
+            color: red;
+            font-size: 30px;
+        }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">DEP POS</a>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-customer.html">
+              <span data-feather="file"></span>
+              Manage Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-item.html">
+              <span data-feather="shopping-cart"></span>
+              Manage Items
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-place-order.html">
+              <span data-feather="users"></span>
+              Place Order
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-search-order.html">
+              <span data-feather="bar-chart-2"></span>
+              Search order
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Manage Place Order</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <button type="button" class="btn btn-success">+ New Order</button>
+        </div>
+      </div>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <label for="exampleInputItemId">ORDER ID : ODR001</label>
+            <label for="exampleInputItemId">ORDER DATE : 2019/12/05</label>
+        </div>
+      <div class="container-fluid">
+        <form>
+
+
+        <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputCustomerId">Select Customer Id</label>
+                        <select class="form-control" id="exampleInputItemId">
+                            <option>C001</option>
+                            <option>C002</option>
+                            <option>C003</option>
+                            <option>C004</option>
+                            <option>C005</option>
+                        </select>                          
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputCustomerName">Customer Name</label>
+                        <input type="customerName" class="form-control" id="exampleInputCustomerName">
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3 mb-3 border-bottom">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputCustomerAddress">Customer Address</label>
+                        <input type="customerAddress" class="form-control" id="exampleInputCustomerAddress" aria-describedby="emailHelp">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputItemId">Select Item Id</label>
+                        <select class="form-control" id="exampleInputItemId">
+                            <option>I001</option>
+                            <option>I002</option>
+                            <option>I003</option>
+                            <option>I004</option>
+                            <option>I005</option>
+                        </select>                    
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputItemDescription">Enter Item Description</label>
+                        <input type="itemDescription" class="form-control" id="exampleInputItemDescription">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputItemUnitPrice">Enter Unit Price</label>
+                        <input type="itemUnitPrice" class="form-control" id="exampleInputItemUnitPrice" aria-describedby="emailHelp">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputItemQty">Enter QTY</label>
+                        <input type="itemQty" class="form-control" id="exampleInputItemQty" aria-describedby="emailHelp">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                </div>
+                <div class="col-6 add-button">
+                    <div class="form-group">
+                            <button type="button" class="btn btn-success">Add</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br/>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">QTY</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">I001</th>
+                    <td>Mouse</td>
+                    <td>1</td>
+                    <td>750.00</td>
+                    <td>750.00</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">I002</th>
+                    <td>KeyBoard</td>
+                    <td>1</td>
+                    <td>1750.00</td>
+                    <td>1750.00</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">I003</th>
+                    <td>Pen Drive</td>
+                    <td>1</td>
+                    <td>950.00</td>
+                    <td>950.00</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+
+      </div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <label class="total-color" for="exampleInputItemId">TOTAL : 3450.00 </label>
+            <button type="submit" class="btn btn-warning">Place Order</button>
+        </div>
+    </main>
+  </div>
+</div>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="dashboard.js"></script> -->
+    </body>
+</html>

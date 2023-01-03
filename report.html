@@ -1,0 +1,423 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Dashboard Template · Bootstrap</title>
+
+    <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/css/all.css">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+
+          .card-footer{
+              padding-left: 35%;
+          }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">RANJITH LEARNERS</a>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <span data-feather="home"></span>
+              Dashboard 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-Exam.html">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span data-feather="file"></span>
+              Manage Branches
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-employees.html">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span data-feather="file"></span>
+              Manage Employees
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-exams.html">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span data-feather="file"></span>
+              Manage Exams
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-trial.html">
+              <span data-feather="shopping-cart"></span>
+              Manage Trials
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-vehicle.html">
+              <span data-feather="users"></span>
+              Manage Vehicles
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="manage-student.html">
+              <span data-feather="bar-chart-2"></span>
+              Manage Students<span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-lectures.html">
+              <span data-feather="bar-chart-2"></span>
+              Manage Lectures
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-online-lectures.html">
+              <span data-feather="bar-chart-2"></span>
+              Manage Online Lectures
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-driving-sessions.html">
+              <span data-feather="bar-chart-2"></span>
+              Manage Driving Sessions
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-reports.html">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" id="Pdf2">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Income & Expense Report</h1>
+        
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <button type="button" class="btn btn-success" onclick="getPDF()">+ Downlod PDF</button>
+        </div>
+      </div>
+
+      <div class="container-fluid bg-light" style="margin-top: 20px;">
+
+        <div class="statistics-details d-flex align-items-center justify-content-between">
+          <div>
+            <p class="statistics-title">Total Income</p>
+            <h3 class="rate-percentage" id="totinc">32.53%</h3>
+            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5%</span></p>
+          </div>
+          <div>
+            <p class="statistics-title">Total Salleries Paid</p>
+            <h3 class="rate-percentage" id="totsal">7,682</h3>
+            <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+0.1%</span></p>
+          </div>
+          <div>
+            <p class="statistics-title">Total Other Expenses</p>
+            <h3 class="rate-percentage" id="tototherexp">68.8</h3>
+            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
+          </div>
+          <div class="d-none d-md-block">
+            <p class="statistics-title">Total Expenses</p>
+            <h3 class="rate-percentage" id="totexp">2m:35s</h3>
+            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+          </div>
+          <div class="d-none d-md-block">
+            <p class="statistics-title">Total Profits</p>
+            <h3 class="rate-percentage" id="totprof">68.8</h3>
+            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
+          </div>
+        
+        </div>
+
+      </div>
+
+      <div class="container-fluid bg-white"></div>
+
+      <div class="container-fluid" id="toPdf">
+        <form>
+          <div class="row">           
+            <div class="col-md-6 col-lg-6">
+                <table id="tblexams2" class="table table-hover table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Income Description</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+              <table id="tblexams3" class="table table-hover table-bordered">
+                  <thead class="thead-dark">
+                  <tr>
+                      <th scope="col">Expense Description</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Amount</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+              </table>
+              
+          </div>
+
+            
+
+          </div>
+       </form>
+      </div>
+
+      
+      
+    </main>
+  </div>
+</div>
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="dashboard.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/report-controller.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+
+    <!-- pie chart start here........................................................................................... -->
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        let x=parseInt(document.getElementById("totinc").innerHTML);
+        let y=parseInt(document.getElementById("totexp").innerHTML);
+        let z=parseInt(document.getElementById("totprof").innerHTML);
+        
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Percentage'],
+          ['Total Income',     x],
+          ['Total Expenses',      z],
+          //['Profits',  q]
+         
+        ]);
+
+        var options = {
+          title: 'The Pie Chart'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+
+    </Script>
+
+   
+
+   <!-- pie chart end here........................................................................................... -->
+
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script  src="node_modules/html2pdf.js/dist/html2pdf.bundle.min.js"></script>
+  <script type="text/javascript">
+
+   function getPDF(){
+    html2pdf(document.getElementById("Pdf2"));
+   }
+
+
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+
+    let x=parseInt(document.getElementById("totinc").innerHTML);
+    let y=parseInt(document.getElementById("totsal").innerHTML);
+    let z=parseInt(document.getElementById("tototherexp").innerHTML);
+    let q=parseInt(document.getElementById("totexp").innerHTML);
+    let r=parseInt(document.getElementById("totprof").innerHTML);
+
+      var data = google.visualization.arrayToDataTable([
+        ["STATUS", "COUNT", { role: "style" } ],
+		     ["TOT INCOME", x, "black"],
+        ["SALARIES", y, "blue"],
+        ["OTHER EXP", z, "red"],
+        ["TOT EXP", q, "green"],
+        ["PROFITS", r, "purple"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "THE COLUMN CHART",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+
+    <div class="row">
+
+      <div class="col-md-2"></div>
+      <div class="col-md-5 bg-light" id="piechart" style="width: 900px; height: 500px;"></div>
+      <div class="col-md-4" id="columnchart_values" style="width: 800px; height: 265px;"></div>
+      <div class="col-md-1"></div>
+
+    </div>
+
+
+    <script>
+
+$(document).ready(function () {
+    loadexams(0);
+    loadexp(0);
+    loadCounts(0);
+})
+
+function loadexams() {
+   
+
+    var ajaxConfig = {
+        method:'GET',
+        url: 'http://localhost:8080/api/income_records',
+        async: true
+    };
+
+    $.ajax(ajaxConfig).done(function (exams, status, jqXHR) {
+        $("#tblexams2 tbody tr").remove();
+        for (var i = 0; i < exams.length; i++) {
+            let eid=exams[i].id;
+
+                        var html = '<tr>' +
+                            '<td>' + exams[i].description +'</td>' +
+                            '<td>' + exams[i].amount +'</td>' +
+                            '<td>' + exams[i].date +'</td>' +
+                            '</tr>';
+                        $("#tblexams2 tbody").append(html);
+
+                    }
+    }).fail(function (jqXHR, status, error) {
+      
+        console.log(error)
+    })
+};
+
+function loadexp() {
+   
+
+   var ajaxConfig = {
+       method:'GET',
+       url: 'http://localhost:8080/api/expense_records',
+       async: true
+   };
+
+   $.ajax(ajaxConfig).done(function (exps, status, jqXHR) {
+       $("#tblexams3 tbody tr").remove();
+       for (var i = 0; i < exps.length; i++) {
+           
+
+                       var html = '<tr>' +
+                           '<td>' + exps[i].description +'</td>' +
+                           '<td>' + exps[i].amount +'</td>' +
+                           '<td>' + exps[i].date +'</td>' +
+                           '</tr>';
+                       $("#tblexams3 tbody").append(html);
+
+                   }
+   }).fail(function (jqXHR, status, error) {
+       console.log(error)
+   })
+};
+
+function loadCounts() {
+   
+
+   var ajaxConfig = {
+       method:'GET',
+       url: 'http://localhost:8080/api/income&expense',
+       async: true
+   };
+
+   $.ajax(ajaxConfig).done(function (counts, status, jqXHR) {
+       //$("#tblexams3 tbody tr").remove();
+
+       let tototherexp=counts.totalOtherExpenses;
+       let totsal=counts.salariesPaid;
+       let totexp=Number(tototherexp)+Number(totsal);
+       let totinc=counts.grossIncome;
+       let totprof=Number(totinc)-Number(totexp);
+
+       document.getElementById("tototherexp").innerHTML=tototherexp;
+       document.getElementById("totsal").innerHTML=totsal;
+       document.getElementById("totinc").innerHTML=totinc;
+       document.getElementById("totexp").innerHTML=totexp;
+       document.getElementById("totprof").innerHTML=totprof;
+       
+   }).fail(function (jqXHR, status, error) {
+       console.log(error)
+   })
+};
+
+    </script>
+
+    
+
+ </body>
+</html>

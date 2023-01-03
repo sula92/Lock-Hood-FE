@@ -1,0 +1,379 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Ranjith Learners</title>
+
+    <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/css/all.css">
+
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ======= Icons used for dropdown (you can use your own) ======== -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+     
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">LOCK-HOOD</a>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="admin.html">
+              <span data-feather="home"></span>
+              <i class="fa fa-home" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="dashboard.html">
+              <span data-feather="home"></span>
+              <i class="fa fa-dashboard" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Dashboard 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-factories.html">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span data-feather="file"></span>
+              <i class="fa fa-institution" style="font-size:19px;color:red">&nbsp;</i>Manage Factories
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-employees.html">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span data-feather="file"></span>
+              <i class="fa fa-group" style="font-size:20px;color:red">&nbsp;</i>Manage Employees
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-departments.html">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span data-feather="file"></span>
+              <i class="fa fa-file-text" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Departments
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-units.html">
+              <span data-feather="shopping-cart"></span>
+              <i class="fa fa-bus" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Units
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-inventories.html">
+              <span data-feather="users"></span>
+              <i class="fa fa-ship" style="font-size:18px;color:red">&nbsp;</i>Manage Inventories
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-kpis.html">
+              <span data-feather="users"></span>
+              <i class="fa fa-motorcycle" style="font-size:18px;color:red">&nbsp;</i>Employee KPI
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-expenses.html">
+              <span data-feather="bar-chart-2"></span>
+              <i class="fa fa-graduation-cap" style="font-size:19px;color:red">&nbsp;</i>Manage Expenses<span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-tasks.html">
+              <span data-feather="bar-chart-2"></span>
+              <i class="fa fa-book" style="font-size:19px;color:red">&nbsp;&nbsp;</i>Manage Tasks
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="manage-reports.html">
+              <span data-feather="bar-chart-2"></span>
+              <i class="fa fa-file" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Reports
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Manage Tasks</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <button type="button" class="btn btn-success" id="btnNew">+ New Task</button>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <form>
+            <div class="row">
+            <div class="col-md-4 col-lg-4">
+              <div class="form-group">
+                <i class=""></i>
+                  <label for="ExamId">Task ID</label>
+                  <input type="text" readonly="true" class="form-control" id="id">
+              </div>
+                <div class="form-group">
+                  <i class=""></i>
+                    <label for="ExamId">Description</label>
+                    <input type="text" class="form-control" id="des">
+                </div>
+                <div class="form-group">
+                  <i class=""></i>
+                    <label for="ExamId">Completion</label>
+                    <input type="text" class="form-control" id="com">
+                </div>
+               
+                <div class="form-group">
+                    <label for="ExamDate">Starting Date</label>
+                    <input type="date" class="form-control" id="sta">
+                </div>
+                <div class="form-group">
+                  <label for="ExamDate">Final Date</label>
+                  <input type="date" class="form-control" id="fin">
+               </div>
+
+              <div class="form-group">
+                <label for="inputState">Priority</label>
+                <select id="pri" class="form-control">
+                  <option selected>HIGH</option>
+                  <option>MEDIUM</option>
+                  <option>LOW</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputState">Employee</label>
+                <select id="emp" class="form-control">
+                  <option selected id="emp1">1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+              </div>
+               
+            
+                <button id="btnSave" type="button" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-warning">Clear</button>
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <table id="tblfactories2" class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Completion</th>
+                        <th scope="col">Starting Date</th>
+                        <th scope="col">Final Date</th>
+                        <th scope="col">Priority</th>                     
+                        <th scope="col">Employee</th>                       
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="card-footer">
+                    <ul class="pagination pagination-sm m-0">
+                        <li class="page-item"><a class="page-link" href="#"><<</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">>></a></li>
+                    </ul>
+                </div>
+
+            </div>
+            </div>
+       </form>
+      </div>
+
+      <div class="container-fluid bg-light" style="margin-top: 20px;">
+
+        <div class="statistics-details d-flex align-items-center justify-content-between">
+          <div>
+            <p class="statistics-title">Highly Priority</p>
+            <h3 class="rate-percentage" id="gam">2</h3>
+            <p class="text-danger d-flex"><i class="mdi mdi-menu-down" ></i><span id="gamPer"></span></p>
+          </div>
+          <div>
+            <p class="statistics-title">Mediumly Priority</p>
+            <h3 class="rate-percentage" id="hiri">1</h3>
+            <p class="text-success d-flex"><i class="mdi mdi-menu-up" ></i><span id="hirikPer"></span></p>
+          </div>
+          <div>
+            <p class="statistics-title">Low Priority</p>
+            <h3 class="rate-percentage" id="yak">1</h3>
+            <p class="text-danger d-flex"><i class="mdi mdi-menu-down" ></i><span id="yakPer"></span></p>
+          </div>
+          <div class="d-none d-md-block">
+            <p class="statistics-title">Completed</p>
+            <h3 class="rate-percentage" id="tot">4</h3>
+            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span></span></p>
+          </div>
+          <div class="d-none d-md-block">
+            <p class="statistics-title">Pending</p>
+            <h3 class="rate-percentage" id="pen"></h3>
+            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span></span></p>
+          </div>
+          
+        
+        </div>
+
+      </div>
+      
+    </main>
+  </div>
+</div>
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="dashboard.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/task-controller.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+
+    <!-- pie chart start here........................................................................................... -->
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawPieChart);
+
+      function drawPieChart() {
+        
+        let x=parseInt(document.getElementById("gam").innerHTML);
+        let y=parseInt(document.getElementById("yak").innerHTML);
+        let z=parseInt(document.getElementById("hiri").innerHTML);
+        let q=parseInt(document.getElementById("tot").innerHTML);
+
+
+        var data = google.visualization.arrayToDataTable([
+          ['Performance', 'Percentage'],
+          ['High',     x],
+          ['Medium',      y],
+          ['Low',  z],
+         
+        ]);
+
+        var options = {
+          title: 'The Pie Chart'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+
+    </Script>
+
+   
+
+   <!-- pie chart end here........................................................................................... -->
+
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+        let x=parseInt(document.getElementById("gam").innerHTML);
+        let y=parseInt(document.getElementById("yak").innerHTML);
+        let z=parseInt(document.getElementById("hiri").innerHTML);
+        let q=parseInt(document.getElementById("tot").innerHTML);
+
+        let total=Number(x)+Number(y)+Number(z);
+
+
+      var data = google.visualization.arrayToDataTable([
+        ["STATUS", "COUNT", { role: "style" } ],
+		    ["TOTAL", total, "black"],
+        ["High", x, "blue"],
+        ["Medium", y, "red"],
+        ["Low", z, "green"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "THE COLUMN CHART",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+
+    <div class="row">
+
+      <div class="col-md-2"></div>
+      <div class="col-md-5 bg-light" id="piechart" style="width: 900px; height: 500px;"></div>
+      <div class="col-md-4" id="columnchart_values" style="width: 800px; height: 265px;"></div>
+      <div class="col-md-1"></div>
+
+    </div>
+
+    <script>
+      $(document).ready(function(){
+      $("#tog1").click(function(){
+       $("dd1").toggle();
+       });
+     });
+
+
+     $("#btnNew").click(function () {
+
+         $("#id").val("");
+         $("#name").val("");
+         $("#add").val("");
+         $("#doe").val("");
+         $("#email").val("");
+         $("#contact").val("");
+
+         $("#btnSave").text("Submit");
+     });
+
+    </script>
+
+    
+
+ </body>
+</html>

@@ -1,0 +1,339 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Dashboard Template · Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/css/all.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+
+        .add-button{
+            margin-top: 27px;
+        }
+
+        .total-color{
+            color: red;
+            font-size: 30px;
+        }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">RANJITH LEARNERS</a>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="admin.html">
+              <span data-feather="home"></span>
+              <i class="fa fa-home" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="dashboard.html">
+              <span data-feather="home"></span>
+              <i class="fa fa-dashboard" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Dashboard 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-factories.html">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span data-feather="file"></span>
+              <i class="fa fa-institution" style="font-size:19px;color:red">&nbsp;</i>Manage Factories
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-employees.html">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span data-feather="file"></span>
+              <i class="fa fa-group" style="font-size:20px;color:red">&nbsp;</i>Manage Employees
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-departments.html">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span data-feather="file"></span>
+              <i class="fa fa-file-text" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Departments
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-units.html">
+              <span data-feather="shopping-cart"></span>
+              <i class="fa fa-bus" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Units
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-inventories.html">
+              <span data-feather="users"></span>
+              <i class="fa fa-ship" style="font-size:18px;color:red">&nbsp;</i>Manage Inventories
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-kpis.html">
+              <span data-feather="users"></span>
+              <i class="fa fa-motorcycle" style="font-size:18px;color:red">&nbsp;</i>Employee KPI
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-expenses.html">
+              <span data-feather="bar-chart-2"></span>
+              <i class="fa fa-graduation-cap" style="font-size:19px;color:red">&nbsp;</i>Manage Expenses<span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-tasks.html">
+              <span data-feather="bar-chart-2"></span>
+              <i class="fa fa-book" style="font-size:19px;color:red">&nbsp;&nbsp;</i>Manage Tasks
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="manage-reports.html">
+              <span data-feather="bar-chart-2"></span>
+              <i class="fa fa-file" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Reports
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Manage Employees</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <button type="button" class="btn btn-success">+ New Employee</button>
+        </div>
+      </div>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <label for="exampleInputItemId"><b>Date</b> : <span id="date">2022/12/20</span></label>
+            <label for="exampleInputItemId"><b>Time</b> : <span id="time">10.30</span></label>
+        </div>
+      <div class="container-fluid">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Employee ID</label>
+              <input type="text" class="form-control" id="id" placeholder="Sulakkhana Dissanayake">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Employee Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Sulakkhana Dissanayake">
+            </div>
+          </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputAddress">Contact</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputState">Civil Status</label>
+            <select id="inputState" class="form-control">
+              <option selected>SINGLE</option>
+              <option>MARRIED</option>
+            </select>
+          </div>
+        </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputState">Employee Type</label>
+              <select id="typ" class="form-control">
+                <option selected>INTERNAL</option>
+                <option>EXTERNAL</option>
+              </select>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="inputEmail4">Position</label>
+              <input type="email" class="form-control" id="pos" placeholder="sul@gmail.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="inputZip">DOJ</label>
+              <input type="date" class="form-control" id="inputZip">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputState">Factory</label>
+              <select id="typ" class="form-control">
+                <option selected>A</option>
+                <option>B</option>
+                <option>C</option>
+              </select>
+            </div>
+          <div class="form-group col-md-3">
+            <label for="inputAddress">Unit</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="inputAddress">Department</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          
+          </div>
+          
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Lock The Profile
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br/>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Civil Status</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">DOJ</th>                   
+                    <th scope="col">Factory</th>
+                    <th scope="col">Unit</th>
+                    <th scope="col">Department</th>    
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Sulakkhana</td>
+                    <td>Gmapaha</td>
+                    <td>123345666</td>
+                    <td>SINGLE</td>
+                    <td>INTERNAL</td>
+                    <td>POS1</td>
+                    <td>2022-02-02</td>
+                    <td>A</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Ruwan</td>
+                    <td>Yakkala</td>
+                    <td>123345666</td>
+                    <td>SINGLE</td>
+                    <td>INTERNAL</td>
+                    <td>POS1</td>
+                    <td>2022-02-02</td>
+                    <td>A</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>NimalI</td>
+                    <td>Gmapaha</td>
+                    <td>123345666</td>
+                    <td>SINGLE</td>
+                    <td>INTERNAL</td>
+                    <td>POS1</td>
+                    <td>2022-02-02</td>
+                    <td>A</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+
+      </div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <label class="total-color" for="exampleInputItemId">TOTAL : 3 </label>
+            <button type="submit" class="btn btn-warning">PDF Report</button>
+        </div>
+    </main>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/exam-report-controller.js"></script>
+<script src="node_modules/axios/dist/axios.min.js"></script>
+        
+
+        <script>
+$(document).ready(function () {
+    //loadexams(0);
+    let A = Date.now();
+    $("#date").html(new Date().toDateString());
+    $("#time").html(new Date().toTimeString());
+    
+})
+
+function loadexams() {
+   
+
+  var A = Date.now();  
+
+    var ajaxConfig = {
+        method:'GET',
+        url: 'http://localhost:8080/api/branches',
+        async: true
+    };
+
+    $.ajax(ajaxConfig).done(function (branches, status, jqXHR) {
+
+      
+       // $("#tblexams2 tbody tr").remove();
+        for (var i = 0; i < branches.length; i++) {
+            //let eid=exams[i].id;
+
+           
+
+                        var html = 
+                            '<option>' + branches[i].name +'</option>';
+                        $("#branch").append(html);
+
+                    }
+    }).fail(function (jqXHR, status, error) {
+      
+        console.log(error)
+    })
+};
+        </script>
+
+
+    </body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OFFICE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="w3.css">
+  <script src="jquery.min.js"></script>
+  <script src="voice.js"></script>
+  <script src="bootstrap.min.js"></script>
+ 
+  
+<style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+ body{
+	background: url('fera.jpg') no-repeat;
+	background-size:cover;
+	font-family:Arial;
+	color:white;
+    background-attachment: fixed;
+     }
+	 
+	  footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+	  width:100%;
+    }
+	
+	h1 {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+
+</style>
+  
+</head>
+<body id="myBody">
+
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    
+    
+     <a href="office.php" class="w3-bar-item w3-button w3-padding-large">OPTIONS</a>
+    
+   <a href="goos.php" class="w3-bar-item w3-button w3-padding-large">INFO</a>
+   
+   
+   
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">HOME</a>
+  <a href="#map" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DASHBOARD</a>
+  
+</div>  
+
+<div class="w3-container ">
+  <div style="height:110px; width:100%"></div>
+</div>
+ 
+
+<div class="container">
+  <center><h1>LOCK HOOD</h1></center>
+  
+  <div class="w3-container ">
+  <div style="height:20px; width:100%"></div>
+</div>
+ 
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        
+          <div style="width:100%; height:200px"></div>  
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div><h1>ERROR....</h1></div>
+    </div>
+     <div class="row">
+    <div class="col-md-3">
+      <div>
+        
+          <div style="width:100%; height:200px"></div>  
+      </div>
+    </div>
+    <div class="container">
+    
+    <div class="w3-container ">
+  <div style="height:60px; width:100%"></div>
+</div>
+    
+  
+    
+  </div>
+</div>
+
+<div class="w3-container ">
+  <div style="height:100px; width:100%"></div>
+</div>
+
+
+<div class="w3-container ">
+  <div style="height:100px; width:100%"></div>
+</div>
+
+<script>
+
+textToSpeach('Sorry, There is an error.');
+textToSpeach('Please chech again.');
+
+  var message = document.querySelector('#msg');
+  var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition; //recognize voice
+  // var SpeechGrammerList =  SpeechGrammarList || window.webkitSpeechGrammarList; //recognize grammer
+  var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+  // var speechRecognitionList = new SpeechGrammarList();
+
+  var grammer = '#JSGF V1.0'; //type of the grammer we use
+
+  var recognition = new SpeechRecognition();
+  // var speechRecoGrammerlist = new SpeechGrammerList();
+  // speechRecoGrammerlist.addFromString(grammer, 1); //provide grammer information
+
+  // recognition.grammers = speechRecoGrammerlist;
+  recognition.lang = 'en-US'; //Specify lang but not compulsory
+  recognition.interimResults = false;
+
+  recognition.onresult = function(event){//when recoginzer reconize correct commands
+      var last = event.results.length - 1;
+      var command = event.results[last][0].transcript;
+    
+      //alert(command);
+
+     
+  };
+
+  recognition.onspeechend = function(){ //when speech end, recogintion stop
+      recognition.stop();
+  };
+
+  recognition.onerror = function(event){ //when any error raised, set a message
+      message.textContent = 'Error in recognition: ' + event.error;
+  };
+
+  document.querySelector('#btnCmd').addEventListener('click', function(){
+          recognition.start();
+      });
+
+      window.onload = function() {
+        recognition.start();
+  
+      };
+
+      //.....................................................................................
+
+    function textToSpeach(message) {
+    const speach = new SpeechSynthesisUtterance(message);
+    [speach.voice] = speechSynthesis.getVoices();
+    speechSynthesis.speak(speach);
+}
+
+
+
+   
+</script>
+
+</body>
+</html>
+
+
