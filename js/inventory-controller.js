@@ -1,33 +1,34 @@
 
 $(document).ready(function () {
-    loadfactories(0);
+    loadinventories(0);
     //loadCounts(0);
 })
 
-function loadfactories() {
+function loadinventories() {
    
 
     var ajaxConfig = {
         method:'GET',
-        url: 'http://localhost:8080/api/factories',
+        url: 'http://localhost:8080/api/inventories',
         async: true
     };
 
-    $.ajax(ajaxConfig).done(function (factories, status, jqXHR) {
-        $("#tblfactories2 tbody tr").remove();
-        for (var i = 0; i < factories.length; i++) {
-            let eid=factories[i].id;
-
-           
+    $.ajax(ajaxConfig).done(function (inventories, status, jqXHR) {
+        $("#tbl tbody tr").remove();
+        for (var i = 0; i < inventories.length; i++) {
+            
                         var html = '<tr>' +
-                            '<td>' + factories[i].id +'</td>' +
-                            '<td>' + factories[i].name +'</td>' +
-                            '<td>' + factories[i].date +'</td>' +
+                            '<td>' + inventories[i].stockId +'</td>' +
+                            '<td>' + inventories[i].rowMaterialId +'</td>' +
                             
-                            //'<td><a href=\"manage-factories-report.html?id='+eid+'\"><i class="fas fa-file-alt" style="font-size:24px;color:blue"></a></i></td>'+
+                            '<td>' + inventories[i].name +'</td>' +
+                            '<td>' + inventories[i].avilableQuantity +'</td>' +
+                            '<td>' + inventories[i].unitValue +'</td>' +
+                            
+                            //'<td><a href=\"manage-inventories-report.html?id='+eid+'\"><i class="fas fa-file-alt" style="font-size:24px;color:blue"></a></i></td>'+
                             '<td><i class="fas fa-trash-alt" style="font-size:24px;color:red"></i></td>'+
                             '</tr>';
-                        $("#tblfactories2 tbody").append(html);
+                        $("#tbl tbody").append(html);
 
                         // document.getElementById("pass").innerHTML=pass;
                         // document.getElementById("part").innerHTML=tot;
@@ -46,16 +47,16 @@ function loadCounts(id) {
 
     var ajaxConfig3 = {
         method:'GET',
-        url: 'http://localhost:8080/api/factories/counts/'+id,
+        url: 'http://localhost:8080/api/inventories/counts/'+id,
         async: true
     };
 
-    $.ajax(ajaxConfig3).done(function (factories, status, jqXHR) {
+    $.ajax(ajaxConfig3).done(function (inventories, status, jqXHR) {
 
-        var gam=factories.high;
-        var hiri=factories.medium;
-        var yak=factories.low;
-        var tot=factories.tot;
+        var gam=inventories.high;
+        var hiri=inventories.medium;
+        var yak=inventories.low;
+        var tot=inventories.tot;
 
         $("#gam").html(gam);
         $("#yak").html(yak);
@@ -71,9 +72,11 @@ function loadCounts(id) {
 };
 $("#btnSave").click(function () {
 
-    var id = $("#id").val();
-    var name = $("#name").val();
-    var date = $("#doe").val();
+    var sid = $("#sid").val();
+    var rid = $("#rid").val();
+    var name = $("#nam").val();
+    var ava = $("#ava").val();
+    var uni = $("#uni").val();
    
 
     if(($("#btnSave").text().localeCompare("Update"))==0){
@@ -82,31 +85,35 @@ $("#btnSave").click(function () {
     }
 
    
-    var factory={
-        id : id,
+    var inventory={
+        stockId : sid,
+        rowMaterialId : rid,
         name: name,
-        date: date
+        avilableQuantity: ava,
+        unitValue: uni
         
     }
    
 
     var ajaxConfig = {
         method:'POST',
-        url: 'http://localhost:8080/api/factories',
+        url: 'http://localhost:8080/api/inventories',
         async: true,
         contentType: 'application/json',
-        data:JSON.stringify(factory)
+        data:JSON.stringify(inventory)
     };
 
     $.ajax(ajaxConfig).done(function (response, status, jqXHR) {
         var html = '<tr>' +
-                        '<td>' + factory.id +'</td>' +
-                        '<td>' + factory.name +'</td>' +
-                        '<td>' + factory.date +'</td>' +
+                        '<td>' + inventory.stockId +'</td>' +
+                        '<td>' + inventory.rowMaterialId +'</td>' +
+                        '<td>' + inventory.name +'</td>' +
+                        '<td>' + inventory.avilableQuantity +'</td>' +
+                        '<td>' + inventory.unitValue +'</td>' +
                         
                         '<td><i class="fas fa-trash-alt"></i></td>'+
                         '</tr>';
-                    $("#tblfactories2 tbody").append(html);
+                    $("#tbl tbody").append(html);
                     $("#name, #doe, #id").val("");
                     if(response){
                         myReload();
@@ -119,16 +126,20 @@ $("#btnSave").click(function () {
 });
 
 
-$("#tblfactories2").delegate("tr","click", function () {
+$("#tbl").delegate("tr","click", function () {
 
-    var id = $(this).children("td").first().text();
-    var name = $(this).children("td:nth-child(2)").first().text();
-    var doe = $(this).children("td:nth-child(3)").first().text();
+    var sid = $(this).children("td").first().text();
+    var rid = $(this).children("td:nth-child(2)").first().text();
+    var name = $(this).children("td:nth-child(3)").first().text();
+    var ava = $(this).children("td:nth-child(4)").first().text();
+    var uni = $(this).children("td:nth-child(5)").first().text();
    
 
-    $("#id").val(id);
-    $("#name").val(name).focus();
-    $("#doe").val(doe);
+    $("#sid").val(sid);
+    $("#rid").val(rid);
+    $("#nam").val(name).focus();
+    $("#ava").val(ava);
+    $("#uni").val(uni);
 
     loadCounts(id);
     
@@ -136,25 +147,26 @@ $("#tblfactories2").delegate("tr","click", function () {
 
 async function update() {
 
+    
     var id = $("#id").val();
-    var name = $("#name").val();
-    var date = $("#doe").val();
-   
+    var name = $("#nam").val();
+    var ava = $("#ava").val();
+    var uni = $("#uni").val();
 
-    var factory={
-        id : id,
+    var inventory={
+        rowMaterialId : id,
         name: name,
-        date: date
-        
+        avilableQuantity: ava,
+        unitValue: uni
         
     }
 
     var ajaxConfig = {
         method:'PUT',
-        url: 'http://localhost:8080/api/factories/'+id,
+        url: 'http://localhost:8080/api/inventories/'+id,
         async: true,
         contentType: 'application/json',
-        data:JSON.stringify(factory)
+        data:JSON.stringify(inventory)
     };
 
     
@@ -162,7 +174,8 @@ async function update() {
     
         $("#id").val("");
         $("#name").val("").focus();
-        $("#doe").val("");
+        $("#ava").val("");
+        $("#uni").val("");
      
         $("#btnSave").text("Save");
         
@@ -178,15 +191,15 @@ async function update() {
 }
 
 
-$("#tblfactories2").on("click", "tbody tr td:last-child i",function () {
-    if(confirm("Are sure you want to delete this Factory ?")){
+$("#tbl").on("click", "tbody tr td:last-child i",function () {
+    if(confirm("Are sure you want to delete this inventory ?")){
         var row = $(this).parents("tr");
 
-        //alert('http://localhost:8080/api/factories?id='+row.find("td:first-child").text());
+        //alert('http://localhost:8080/api/inventories?id='+row.find("td:first-child").text());
 
         var ajaxConfig = {
             method:'DELETE',
-            url: 'http://localhost:8080/api/factories/'+row.find("td:first-child").text(),
+            url: 'http://localhost:8080/api/inventories/'+row.find("td:first-child").text(),
             async: true
         };
 
@@ -200,7 +213,7 @@ $("#tblfactories2").on("click", "tbody tr td:last-child i",function () {
         })
 
         // $.ajax({
-        //     url: 'http://localhost:8080/api/factories?id='+row.find("td:first-child").text(),
+        //     url: 'http://localhost:8080/api/inventories?id='+row.find("td:first-child").text(),
         //     type: 'DELETE',
         //     success: function (result) {
         //         alert('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
@@ -209,13 +222,13 @@ $("#tblfactories2").on("click", "tbody tr td:last-child i",function () {
     }   
 });
 
-// $("#tblfactories2").on("click", "tbody tr td:eq(4)",function () {
+// $("#tbl").on("click", "tbody tr td:eq(4)",function () {
 
     
    
 //         var row = $(this).parents("tr");
-//         alert('manage-factories-report.html?id='+row.find("td:first-child").text());
-//         window.location.href = 'manage-factories-report.html?id='+row.find("td:first-child").text();
+//         alert('manage-inventories-report.html?id='+row.find("td:first-child").text());
+//         window.location.href = 'manage-inventories-report.html?id='+row.find("td:first-child").text();
 
 // });
 
@@ -235,17 +248,17 @@ function initializePagination(totalElement) {
     $(".card-footer .pagination").html(html);
 
     $(".card-footer .pagination .page-item:first-child").click(function () {
-        loadfactories(0);
+        loadinventories(0);
     });
 
     $(".card-footer .pagination .page-item:last-child").click(function () {
-        loadfactories(totalPages - 1);
+        loadinventories(totalPages - 1);
     });
 
     $(".card-footer .pagination .page-item").click(function () {
         var number = parseInt($(this).find("a").text());
         if(number){
-            loadfactories( number -1);
+            loadinventories( number -1);
         }
     }) 
 

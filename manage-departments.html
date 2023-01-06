@@ -37,7 +37,7 @@
   </head>
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">RANJITH LEARNERS</a>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">LOCK-HOOD</a>
 </nav>
 
 <div class="container-fluid">
@@ -58,10 +58,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-branches.html">
+            <a class="nav-link" href="manage-factories.html">
               <i class="menu-icon mdi mdi-floor-plan"></i>
               <span data-feather="file"></span>
-              <i class="fa fa-institution" style="font-size:19px;color:red">&nbsp;</i>Manage Branches
+              <i class="fa fa-institution" style="font-size:19px;color:red">&nbsp;</i>Manage Factories
             </a>
           </li>
           <li class="nav-item">
@@ -72,60 +72,49 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-exams.html">
+            <a class="nav-link" href="manage-departments.html">
               <i class="menu-icon mdi mdi-floor-plan"></i>
               <span data-feather="file"></span>
-              <i class="fa fa-file-text" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Exams
+              <i class="fa fa-file-text" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Departments
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-trial.html">
+            <a class="nav-link" href="manage-units.html">
               <span data-feather="shopping-cart"></span>
-              <i class="fa fa-bus" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Trials
+              <i class="fa fa-bus" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Units
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-suppliers.html">
+            <a class="nav-link" href="manage-inventories.html">
               <span data-feather="users"></span>
-              <i class="fa fa-ship" style="font-size:18px;color:red">&nbsp;</i>Manage Suppliers
+              <i class="fa fa-ship" style="font-size:18px;color:red">&nbsp;</i>Manage Inventories
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-vehicles.html">
+            <a class="nav-link" href="manage-kpis.html">
               <span data-feather="users"></span>
-              <i class="fa fa-motorcycle" style="font-size:18px;color:red">&nbsp;</i>Manage Vehicles
+              <i class="fa fa-motorcycle" style="font-size:18px;color:red">&nbsp;</i>Employee KPI
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-student.html">
+            <a class="nav-link" href="manage-incomes.html">
               <span data-feather="bar-chart-2"></span>
-              <i class="fa fa-graduation-cap" style="font-size:19px;color:red">&nbsp;</i>Manage Students<span class="sr-only">(current)</span>
+              <i class="fa fa-graduation-cap" style="font-size:19px;color:red">&nbsp;</i>Manage Incomes<span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-lectures.html">
+            <a class="nav-link" href="manage-expenses.html">
               <span data-feather="bar-chart-2"></span>
-              <i class="fa fa-book" style="font-size:19px;color:red">&nbsp;&nbsp;</i>Manage Lectures
+              <i class="fa fa-graduation-cap" style="font-size:19px;color:red">&nbsp;</i>Manage Expenses<span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-online-lectures.html">
+            <a class="nav-link" href="manage-tasks.html">
               <span data-feather="bar-chart-2"></span>
-              <i class="fa fa-laptop" style="font-size:19px;color:red"></i>&nbsp;&nbsp;Manage Online Lectures
+              <i class="fa fa-book" style="font-size:19px;color:red">&nbsp;&nbsp;</i>Manage Tasks
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="manage-driving-sessions.html">
-              <span data-feather="bar-chart-2"></span>
-              <i class="fa fa-refresh" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Driving Sessions
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="manage-other-expenses.html">
-              <span data-feather="users"></span>
-              <i class="fa fa-money" style="font-size:18px;color:red">&nbsp;&nbsp;</i>Manage Other Expenses
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="manage-reports.html">
               <span data-feather="bar-chart-2"></span>
@@ -135,51 +124,58 @@
         </ul>
       </div>
     </nav>
-        </ul>
-      </div>
-    </nav>
+    </ul>
+  </div>
+</nav>
+
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Manage Trial</h1>
+        <h1 class="h2">Manage Departments</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <button type="button" class="btn btn-success">+ New Trila</button>
+            <button type="button" class="btn btn-success" id="btnNew">+ New Department</button>
         </div>
       </div>
       <div class="container-fluid">
         <form>
             <div class="row">
             <div class="col-md-5 col-lg-5">
-                <div class="form-group">
-                  <i class="fa fa-shopping-cart"></i>
-                    <label for="ExamId">Enter Trial Id</label>
-                    <input type="text" class="form-control" id="id">
-                </div>
-                <div class="form-group">
-                    <label for="ExamDate">Enter Date</label>
-                    <input type="date" class="form-control" id="date">
-                </div>
-                <div class="form-group">
-                  <label for="ExamTime">Enter Time</label>
-                  <input type="time" class="form-control" id="time">
+              <div class="form-group">
+                <i class=""></i>
+                  <label for="DepId">Department ID</label>
+                  <input type="text" readonly="true" class="form-control" id="id">
               </div>
                 <div class="form-group">
-                    <label for="ExamVenue">Enter Venue</label>
-                    <input type="text" class="form-control" id="venue" aria-describedby="emailHelp">
-                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                  <i class=""></i>
+                    <label for="DepName">Department Name</label>
+                    <input type="text" class="form-control" id="name">
                 </div>
+                <div class="form-group">
+                    <i class=""></i>
+                      <label for="">Factory</label>
+                      <select class="form-control" name="" id="factoryDropdown">
+                        <option value="null" selected disabled>Select Factory</option>
+                      </select>
+                  </div>
+               
+                <div class="form-group">
+                    <label for="ExamDate">Date of Established</label>
+                    <input type="date" class="form-control" id="doe">
+                </div>
+               
+            
                 <button id="btnSave" type="button" class="btn btn-primary">Submit</button>
                 <button type="submit" class="btn btn-warning">Clear</button>
             </div>
             <div class="col-md-7 col-lg-7">
-                <table id="tblexams2" class="table">
+                <table id="tblDeartments" class="table">
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Time</th>
-                        <th scope="col">Venue</th>
-                        <th scope="col">Report</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Factory Name</th>
+                        <th scope="col">Date of Est</th>
+                        
                         <th scope="col">Delete</th>
                     </tr>
                     </thead>
@@ -201,39 +197,6 @@
             </div>
        </form>
       </div>
-
-      <div class="container-fluid bg-light" style="margin-top: 20px;">
-
-        <div class="statistics-details d-flex align-items-center justify-content-between">
-          <div>
-            <p class="statistics-title">Total Participants</p>
-            <h3 class="rate-percentage" id="part">92.53%</h3>
-            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5%</span></p>
-          </div>
-          <div>
-            <p class="statistics-title">Total Pass</p>
-            <h3 class="rate-percentage" id="pass">7,682</h3>
-            <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+0.1%</span></p>
-          </div>
-          <div>
-            <p class="statistics-title">Total Fail</p>
-            <h3 class="rate-percentage" id="fail">68.8</h3>
-            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
-          </div>
-          <div class="d-none d-md-block">
-            <p class="statistics-title" id="ab">Total Absent</p>
-            <h3 class="rate-percentage">2m:35s</h3>
-            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-          </div>
-          <div class="d-none d-md-block">
-            <p class="statistics-title">New Candidates</p>
-            <h3 class="rate-percentage">68.8</h3>
-            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
-          </div>
-        
-        </div>
-
-      </div>
       
     </main>
   </div>
@@ -247,7 +210,7 @@
         <script src="dashboard.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/exam-controller.js"></script>
+    <script src="js/department-controller.js"></script>
     <script src="node_modules/axios/dist/axios.min.js"></script>
 
     <!-- pie chart start here........................................................................................... -->
@@ -255,15 +218,21 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawPieChart);
 
-      function drawChart() {
+      function drawPieChart() {
+
+        let x=parseInt(document.getElementById("gam").innerHTML);
+        let y=parseInt(document.getElementById("yak").innerHTML);
+        let z=parseInt(document.getElementById("hiri").innerHTML);
+        let q=parseInt(document.getElementById("tot").innerHTML);
+
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Percentage'],
-          ['Pass',     11],
-          ['Fail',      2],
-          ['Absent',  2],
+          ['Performance', 'Percentage'],
+          ['Low',     x],
+          ['Medium',      y],
+          ['High',  z],
          
         ]);
 
@@ -287,12 +256,19 @@
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
+
+        let x=parseInt(document.getElementById("gam").innerHTML);
+        let y=parseInt(document.getElementById("yak").innerHTML);
+        let z=parseInt(document.getElementById("hiri").innerHTML);
+        let q=parseInt(document.getElementById("tot").innerHTML);
+
+
       var data = google.visualization.arrayToDataTable([
         ["STATUS", "COUNT", { role: "style" } ],
-		["TOTAL", 10, "black"],
-        ["PASS", 4, "blue"],
-        ["FAIL", 2, "red"],
-        ["ABSENT", 4, "green"]
+		    ["TOTAL", q, "black"],
+        ["High", x, "blue"],
+        ["Medium", y, "red"],
+        ["Low", z, "green"]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -330,6 +306,20 @@
        $("dd1").toggle();
        });
      });
+
+
+     $("#btnNew").click(function () {
+
+         $("#id").val("");
+         $("#name").val("");
+         $("#add").val("");
+         $("#doe").val("");
+         $("#email").val("");
+         $("#contact").val("");
+
+         $("#btnSave").text("Submit");
+     });
+
     </script>
 
     

@@ -192,14 +192,14 @@ async function update() {
 
 
 $("#tblfactories2").on("click", "tbody tr td:last-child i",function () {
-    if(confirm("Are sure you want to delete this Factory ?")){
+    if(confirm("Are sure you want to delete this KPI ?")){
         var row = $(this).parents("tr");
 
         //alert('http://localhost:8080/api/factories?id='+row.find("td:first-child").text());
 
         var ajaxConfig = {
             method:'DELETE',
-            url: 'http://localhost:8080/api/factories/'+row.find("td:first-child").text(),
+            url: 'http://localhost:8080/api/kpis/'+row.find("td:first-child").text(),
             async: true
         };
 

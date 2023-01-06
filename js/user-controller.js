@@ -1,52 +1,49 @@
 
 $(document).ready(function () {
-    loadfactories(0);
-    //loadCounts(0);
+    load(0);
+    loadCounts()
 })
 
-function loadfactories() {
+function load() {
    
 
     var ajaxConfig = {
         method:'GET',
-        url: 'http://localhost:8080/api/factories',
+        url: 'http://localhost:8080/api/users',
         async: true
     };
 
-    $.ajax(ajaxConfig).done(function (factories, status, jqXHR) {
+    $.ajax(ajaxConfig).done(function (users, status, jqXHR) {
         $("#tblfactories2 tbody tr").remove();
-        for (var i = 0; i < factories.length; i++) {
-            let eid=factories[i].id;
-
-           
+        for (var i = 0; i < users.length; i++) {
+        
                         var html = '<tr>' +
-                            '<td>' + factories[i].id +'</td>' +
-                            '<td>' + factories[i].name +'</td>' +
-                            '<td>' + factories[i].date +'</td>' +
+                            '<td>' + users[i].id +'</td>' +
+                            '<td>' + users[i].name +'</td>' +
+                            '<td>' + users[i].userName +'</td>' +
+                            '<td>' + users[i].password +'</td>' +
+                            '<td>' + users[i].privilege +'</td>' +
+                            '<td>' + users[i].email +'</td>' +
                             
                             //'<td><a href=\"manage-factories-report.html?id='+eid+'\"><i class="fas fa-file-alt" style="font-size:24px;color:blue"></a></i></td>'+
                             '<td><i class="fas fa-trash-alt" style="font-size:24px;color:red"></i></td>'+
                             '</tr>';
                         $("#tblfactories2 tbody").append(html);
 
-                        // document.getElementById("pass").innerHTML=pass;
-                        // document.getElementById("part").innerHTML=tot;
-                        // document.getElementById("fail").innerHTML=fail;
-                        // document.getElementById("totab").innerHTML=ab;
-                        //document.getElementById("totpend").innerHTML=pen;
+                        
                     }
     }).fail(function (jqXHR, status, error) {
         console.log(error)
     })
 };
 
-function loadCounts(id) {
+function loadCounts() {
    
     //alert("rrrrrrrrrrrrrrr");
 
     var ajaxConfig3 = {
         method:'GET',
-        url: 'http://localhost:8080/api/factories/counts/'+id,
+        url: 'http://localhost:8080/api/users/counts',
         async: true
     };
 
@@ -72,46 +69,56 @@ function loadCounts(id) {
 $("#btnSave").click(function () {
 
     var id = $("#id").val();
-    var name = $("#name").val();
-    var date = $("#doe").val();
+    var nam = $("#nam").val();
+    var use = $("#use").val();
+    var pas = $("#pas").val();
+    var pri = $("#pri").val();
+    var ema = $("#ema").val();
    
 
     if(($("#btnSave").text().localeCompare("Update"))==0){
         update();
+        //window.location.reload();
         return;
     }
 
    
-    var factory={
-        id : id,
-        name: name,
-        date: date
+    var user={
+        "id": id,
+        "name": nam,
+        "userName": use,
+        "password": pas,
+        "privilege": pri,
+        "email": ema
         
     }
    
 
     var ajaxConfig = {
         method:'POST',
-        url: 'http://localhost:8080/api/factories',
+        url: 'http://localhost:8080/api/users',
         async: true,
         contentType: 'application/json',
-        data:JSON.stringify(factory)
+        data:JSON.stringify(user)
     };
 
     $.ajax(ajaxConfig).done(function (response, status, jqXHR) {
         var html = '<tr>' +
-                        '<td>' + factory.id +'</td>' +
-                        '<td>' + factory.name +'</td>' +
-                        '<td>' + factory.date +'</td>' +
+                        '<td>' + user.id +'</td>' +
+                        '<td>' + user.name +'</td>' +
+                        '<td>' + user.userName +'</td>' +
+                        '<td>' + user.password +'</td>' +
+                        '<td>' + user.privilege +'</td>' +
+                        '<td>' + user.email +'</td>' +
                         
                         '<td><i class="fas fa-trash-alt"></i></td>'+
                         '</tr>';
                     $("#tblfactories2 tbody").append(html);
-                    $("#name, #doe, #id").val("");
+                    $("#nam, #pri, #pas, #use, #ema, #id").val("");
                     if(response){
                         myReload();
                     }
-                    $("#name").focus();
+                    $("#nam").focus();
     }).fail(function (jqXHR, status, error) {
         console.log(error)
     })
@@ -121,49 +128,64 @@ $("#btnSave").click(function () {
 
 $("#tblfactories2").delegate("tr","click", function () {
 
+    $("#btnSave").text("Update");
+
     var id = $(this).children("td").first().text();
-    var name = $(this).children("td:nth-child(2)").first().text();
-    var doe = $(this).children("td:nth-child(3)").first().text();
-   
+    var eff = $(this).children("td:nth-child(2)").first().text();
+    var use = $(this).children("td:nth-child(3)").first().text();
+    var ava = $(this).children("td:nth-child(4)").first().text();
+    var rel = $(this).children("td:nth-child(5)").first().text();
+    var emp = $(this).children("td:nth-child(6)").first().text();
+    
 
     $("#id").val(id);
-    $("#name").val(name).focus();
-    $("#doe").val(doe);
+    $("#nam").val(eff).focus();
+    $("#use").val(use);
+    $("#pas").val(ava);
+    $("#pri").val(rel)
+    $("#ema").val(emp)
 
-    loadCounts(id);
+    loadCounts();
     
 });
 
 async function update() {
 
     var id = $("#id").val();
-    var name = $("#name").val();
-    var date = $("#doe").val();
+    var nam = $("#nam").val();
+    var use = $("#use").val();
+    var pas = $("#pas").val();
+    var pri = $("#pri").val();
+    var ema = $("#ema").val();
    
-
-    var factory={
-        id : id,
-        name: name,
-        date: date
-        
+    var user={
+        "id": id,
+        "name": nam,
+        "userName": use,
+        "password": pas,
+        "privilege": pri,
+        "email": ema
         
     }
-
     var ajaxConfig = {
         method:'PUT',
-        url: 'http://localhost:8080/api/factories/'+id,
+        url: 'http://localhost:8080/api/users/'+id,
         async: true,
         contentType: 'application/json',
-        data:JSON.stringify(factory)
+        data:JSON.stringify(user)
     };
 
     
     $.ajax(ajaxConfig).done(function (response, status, jqXHR) {
     
-        $("#id").val("");
-        $("#name").val("").focus();
-        $("#doe").val("");
-     
+       
+    $("#id").val("");
+    $("#nam").val("").focus();
+    $("#use").val("");
+    $("#pas").val("");
+    $("#pri").val("");
+    $("#ema").val("");
+
         $("#btnSave").text("Save");
         
         if(response){
@@ -179,14 +201,14 @@ async function update() {
 
 
 $("#tblfactories2").on("click", "tbody tr td:last-child i",function () {
-    if(confirm("Are sure you want to delete this Factory ?")){
+    if(confirm("Are sure you want to delete this User?")){
         var row = $(this).parents("tr");
 
         //alert('http://localhost:8080/api/factories?id='+row.find("td:first-child").text());
 
         var ajaxConfig = {
             method:'DELETE',
-            url: 'http://localhost:8080/api/factories/'+row.find("td:first-child").text(),
+            url: 'http://localhost:8080/api/users/'+row.find("td:first-child").text(),
             async: true
         };
 
@@ -255,3 +277,20 @@ function initializePagination(totalElement) {
 function myReload() {
     window.location.reload();
   }
+
+  function myReload() {
+    window.location.reload();
+  }
+  
+  $("#btnNew").click(function () {
+  
+    $("#id").val("");
+    $("#nam").val("").focus();
+    $("#use").val("");
+    $("#pas").val("");
+    $("#pri").val("");
+    $("#ema").val("");
+   
+  
+    $("#btnSave").text("Submit");
+  });

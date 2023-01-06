@@ -26,6 +26,7 @@
 
 <!-- ======= Icons used for dropdown (you can use your own) ======== -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <style>
      
@@ -36,7 +37,7 @@
   </head>
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">RANJITH LEARNERS</a>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">LOCK-HOOD</a>
 </nav>
 
 <div class="container-fluid">
@@ -45,72 +46,73 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="admin.html">
               <span data-feather="home"></span>
-              Dashboard 
+              <i class="fa fa-home" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Home
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-Other-Expenses.html">
+            <a class="nav-link active" href="dashboard.html">
+              <span data-feather="home"></span>
+              <i class="fa fa-dashboard" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Dashboard 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="manage-factories.html">
               <i class="menu-icon mdi mdi-floor-plan"></i>
               <span data-feather="file"></span>
-              Manage Branches
+              <i class="fa fa-institution" style="font-size:19px;color:red">&nbsp;</i>Manage Factories
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="manage-employees.html">
               <i class="menu-icon mdi mdi-floor-plan"></i>
               <span data-feather="file"></span>
-              Manage Employees
+              <i class="fa fa-group" style="font-size:20px;color:red">&nbsp;</i>Manage Employees
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-Other-Expensess.html">
+            <a class="nav-link" href="manage-departments.html">
               <i class="menu-icon mdi mdi-floor-plan"></i>
               <span data-feather="file"></span>
-              Manage Other-Expensess
+              <i class="fa fa-file-text" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Departments
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-trial.html">
+            <a class="nav-link" href="manage-units.html">
               <span data-feather="shopping-cart"></span>
-              Manage Trials
+              <i class="fa fa-bus" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Manage Units
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-vehicle.html">
+            <a class="nav-link" href="manage-inventories.html">
               <span data-feather="users"></span>
-              Manage Vehicles
+              <i class="fa fa-ship" style="font-size:18px;color:red">&nbsp;</i>Manage Inventories
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="manage-student.html">
-              <span data-feather="bar-chart-2"></span>
-              Manage Students<span class="sr-only">(current)</span>
+            <a class="nav-link" href="manage-kpis.html">
+              <span data-feather="users"></span>
+              <i class="fa fa-motorcycle" style="font-size:18px;color:red">&nbsp;</i>Employee KPI
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-lectures.html">
+            <a class="nav-link" href="manage-expenses.html">
               <span data-feather="bar-chart-2"></span>
-              Manage Lectures
+              <i class="fa fa-graduation-cap" style="font-size:19px;color:red">&nbsp;</i>Manage Expenses<span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage-online-lectures.html">
+            <a class="nav-link" href="manage-tasks.html">
               <span data-feather="bar-chart-2"></span>
-              Manage Online Lectures
+              <i class="fa fa-book" style="font-size:19px;color:red">&nbsp;&nbsp;</i>Manage Tasks
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="manage-driving-sessions.html">
-              <span data-feather="bar-chart-2"></span>
-              Manage Driving Sessions
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="manage-reports.html">
               <span data-feather="bar-chart-2"></span>
-              Reports
+              <i class="fa fa-file" style="font-size:20px;color:red">&nbsp;&nbsp;</i>Reports
             </a>
           </li>
         </ul>
@@ -122,46 +124,68 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Manage Other-Expensess</h1>
+        <h1 class="h2">Manage Users</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <button type="button" class="btn btn-success">+ New Other-Expenses</button>
+            <button type="button" class="btn btn-success" id="btnNew">+ New User</button>
         </div>
       </div>
       <div class="container-fluid">
         <form>
             <div class="row">
             <div class="col-md-5 col-lg-5">
+              <div class="form-group">
+                <i class=""></i>
+                  <label for="ExamId">ID</label>
+                  <input type="text" readonly="true" class="form-control" id="id">
+              </div>
+              <div class="form-group">
+                <i class=""></i>
+                  <label for="ExamId">Name</label>
+                  <input type="text" class="form-control" id="nam">
+              </div>
                 <div class="form-group">
                   <i class=""></i>
-                    <label for="Other-ExpensesId">Enter Other-Expenses Id</label>
-                    <input type="text" class="form-control" id="id">
+                    <label for="ExamId">User Name</label>
+                    <input type="text" class="form-control" id="use">
                 </div>
+               
                 <div class="form-group">
-                    <label for="Other-ExpensesDate">Enter Date</label>
-                    <input type="date" class="form-control" id="date">
+                    <label for="ExamDate">Password</label>
+                    <input type="password" class="form-control" id="pas">
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="Other-ExpensesVenue">Description</label>
-                    <input type="text" class="form-control" id="venue" aria-describedby="emailHelp">
-                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                  <label for="inputState">privilege</label>
+                  <select id="pri" class="form-control">
+                    <option selected>USER</option>
+                    <option>ADMIN</option>
+                    <option>SUPER_ADMIN</option>
+                  </select>
                 </div>
+
                 <div class="form-group">
-                  <label for="Other-ExpensesVenue">Amount</label>
-                  <input type="text" class="form-control" id="venue" aria-describedby="emailHelp">
-                  <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-              </div>
+                  <i class=""></i>
+                    <label for="ExamId">Email</label>
+                    <input type="email" class="form-control" id="ema">
+                </div>
+
+            
                 <button id="btnSave" type="button" class="btn btn-primary">Submit</button>
                 <button type="submit" class="btn btn-warning">Clear</button>
             </div>
             <div class="col-md-7 col-lg-7">
-                <table id="tblOther-Expensess2" class="table">
+                <table id="tblfactories2" class="table">
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Amount</th>
+                        <th scope="col">Name</th>
+                       
+                        <th scope="col">User Name</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Privilege</th>
+                        <th scope="col">Email</th>
+                        
+                        <th scope="col">Delete</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -183,7 +207,10 @@
        </form>
       </div>
 
-      
+      <div class="container-fluid bg-light" style="margin-top: 20px;">
+
+       
+      </div>
       
     </main>
   </div>
@@ -197,19 +224,35 @@
         <script src="dashboard.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/Other-Expenses-controller.js"></script>
+    <script src="js/user-controller.js"></script>
     <script src="node_modules/axios/dist/axios.min.js"></script>
 
     <!-- pie chart start here........................................................................................... -->
 
-    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+     
 
-    <script>
+    
       $(document).ready(function(){
       $("#tog1").click(function(){
        $("dd1").toggle();
        });
      });
+
+
+     $("#btnNew").click(function () {
+
+         $("#id").val("");
+         $("#name").val("");
+         $("#add").val("");
+         $("#doe").val("");
+         $("#email").val("");
+         $("#contact").val("");
+
+         $("#btnSave").text("Submit");
+     });
+
     </script>
 
     
