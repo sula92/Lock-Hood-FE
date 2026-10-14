@@ -43,7 +43,9 @@ function loadDepartments() {
       for (var i = 0; i < factories.length; i++) {
 
         var html =
-          "<tr>" +
+          '<tr data-department-id="' +
+          Number(factories[i].department.id) +
+          '">' +
           "<td>" +
           factories[i].id +
           "</td>" +
@@ -101,38 +103,31 @@ function loadCounts(id) {
 }
 
 $("#btnSave").click(function () {
-  var id = $("#id").val();
-  var name = $("#name").val();
-  var factoryName = $("#factoryDropdown").val(); //this will return the selected factory ID
-  var date = $("#doe").val();
-
-  alert(factoryName);
+  var name = $("#nam").val();
+  var departmentId = $("#dep").val();
 
   if ($("#btnSave").text().localeCompare("Update") == 0) {
     update();
     return;
   }
 
-  var department = {
-    id: id,
+  var unit = {
     name: name,
-    factoryId: factoryName
-   
+    departmentId: departmentId
   };
 
   var ajaxConfig = {
     method: "POST",
-    url: "http://localhost:8080/api/departments",
+    url: "http://localhost:8080/api/units",
     async: true,
     contentType: "application/json",
-    data: JSON.stringify(department),
+    data: JSON.stringify(unit),
   };
 
   $.ajax(ajaxConfig)
     .done(function (response, status, jqXHR) {
       $("#id").val("");
-      $("#name").val("").focus();
-      $("#doe").val("");
+      $("#nam").val("").focus();
 
       $("#btnSave").text("Save");
 
@@ -151,30 +146,22 @@ $("#tblDeartments").delegate("tr", "click", function () {
   $("#btnSave").text("Update");
   var id = $(this).children("td").first().text();
   var name = $(this).children("td:nth-child(2)").first().text();
-  var departmentId = $(this).children("td:nth-child(3)").first().text();
-  var doe = $(this).children("td:nth-child(4)").first().text();
-
-  //alert(factoryName);
+  var departmentId = $(this).data("department-id");
 
   $("#id").val(id);
   $("#nam").val(name).focus();
-  $("#factoryDropdown").val(departmentId);
-  
-
-  loadCounts(id);
+  $("#dep").val(departmentId);
 });
 
 async function update() {
   var id = $("#id").val();
-  var name = $("#name").val();
-  var departmentId = $("#factoryDropdown").val();
-  
+  var name = $("#nam").val();
+  var departmentId = $("#dep").val();
 
-  var department = {
+  var unit = {
     id: id,
     name: name,
     departmentId: departmentId
-    
   };
 
   var ajaxConfig = {
@@ -182,7 +169,7 @@ async function update() {
     url: "http://localhost:8080/api/units/" + id,
     async: true,
     contentType: "application/json",
-    data: JSON.stringify(department),
+    data: JSON.stringify(unit),
   };
 
   $.ajax(ajaxConfig)
